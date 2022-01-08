@@ -1,2 +1,8 @@
-<!-- String interpolation example -->
-<p>Server {{ serverId }} is {{ serverStatus }} and running at {{ getServerPort() }}</p>
+<!-- 
+    String interpolation example
+    ngStyle directive example. The [] brackets around the directive specifies the property 
+    to bind (style properties to bind with ngStyle)
+ -->
+<p [ngStyle]="{ color: getColor() }">
+    Server {{ serverId }} is {{ serverStatus }} and running at {{ getServerPort() }}
+</p>

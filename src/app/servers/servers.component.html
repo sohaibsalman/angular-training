@@ -3,7 +3,7 @@
     event binding example. We can pass the event object to the function using
     special variable in angular $event. This is not 2 way binding!
 -->
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
 
 <!-- two way binding example -->
 <input type="text" class="form-control" [(ngModel)]="serverName">
@@ -14,7 +14,13 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 
 <!-- String interpolation example -->
-<p> {{ serverCreationStatus }} </p>
+<!-- <p> {{ serverCreationStatus }} </p> -->
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- 
+    ngIf directive example. The * before ngIf tells that it is a structural
+    directive (that will change the structure of DOM) 
+-->
+<p *ngIf="isServerCreated"> {{ serverCreationStatus }} </p>
+
+<!-- ngFor directive example -->
+<app-server *ngFor="let server of servers"></app-server>
