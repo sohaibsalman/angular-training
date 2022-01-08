@@ -1,7 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-servers',
+  /**
+   * selector property can be used as element selector, attribute selector, class selector
+   * - for element selector, we simply write the name of the element e.g 'app-servers'
+   * - for attribute selector, we use []: e.g. '[app-servers]'
+   * - for class selector, we use . e.g. '.app-servers'
+   */
+   selector: 'app-servers',
+  //  selector: '[app-servers]',
+  //  selector: '.app-servers',
+
   templateUrl: './servers.component.html',
 
   /**
