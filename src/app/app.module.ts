@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -14,12 +15,13 @@ import { ServersComponent } from './servers/servers.component';
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent // Register the custom Server Component
+    ServersComponent, // Register the custom Server Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    FormsModule, // Module to use ngModel directive
   ],
   providers: [],
-  bootstrap: [AppComponent]   // tells angualr about which component to bind in index.html
+  bootstrap: [AppComponent], // tells angualr about which component to bind in index.html
 })
-export class AppModule { }
+export class AppModule {}
