@@ -7,5 +7,5 @@ import { Server } from './server.model';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    serverElements: Server[] = [];
+    serverElements: Server[] = [{ type: 'server', name: 'Testserver', content: 'Just a test!' }];
 }
