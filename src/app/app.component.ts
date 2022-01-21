@@ -8,4 +8,20 @@ import { Server } from './server.model';
 })
 export class AppComponent {
     serverElements: Server[] = [{ type: 'server', name: 'Testserver', content: 'Just a test!' }];
+
+    handleAddServer(serverData: Server) {
+        this.serverElements.push({
+            type: 'server',
+            name: serverData.name,
+            content: serverData.content,
+        });
+    }
+
+    handleAddBlueprint(serverData: Server) {
+        this.serverElements.push({
+            type: 'blueprint',
+            name: serverData.name,
+            content: serverData.content,
+        });
+    }
 }
