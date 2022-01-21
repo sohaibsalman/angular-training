@@ -11,7 +11,15 @@
         -->
         <input type="text" class="form-control" #serverNameInput>
         <label>Server Content</label>
-        <input type="text" class="form-control" [(ngModel)]="newServerContent">
+        <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+
+        <!-- 
+            Local referencing example by fetching the reference in ts file using ViewChild declarator.
+            In this example, we don't need to pass the reference as argument to the function, we can
+            access the element from ts code. 
+         -->
+        <input type="text" class="form-control" #serverContentInput>
+
         <br>
         <!-- Pass the serverNameInput local reference to the typescript function -->
         <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
