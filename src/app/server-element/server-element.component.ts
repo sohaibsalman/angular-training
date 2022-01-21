@@ -1,9 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'app-server-element',
     templateUrl: './server-element.component.html',
     styleUrls: ['./server-element.component.css'],
+
+    // View encapsulation allows css to be applied only to the elements defined in the components.
+    // It won't affect the global css styling. This is done by angular by adding attribute to each
+    // HTML element in the component e.g p[ng-ego-1]
+    encapsulation: ViewEncapsulation.Emulated, // Default is emulated, we can set None and ShadowDom
 })
 export class ServerElementComponent implements OnInit {
     /**
