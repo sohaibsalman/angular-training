@@ -1,6 +1,15 @@
 <div class="row">
     <div class="col-xs-12">
         <p>Add new Servers or blueprints!</p>
+
+        <!-- 
+            ng-content is a directive that can be used to render the the passed elements 
+            between the tags. e.g. <custom-tag> <div>abc</div> </custom-tag>, to render 
+            <div>abc</div> in the custom-tag, we will use <ng-content>. Note ng-content is the 
+            only directive that is written as a component tag, but actually it is a directive
+         -->
+        <ng-content></ng-content>
+
         <label>Server Name</label>
         <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
 

@@ -1,5 +1,8 @@
 <div class="container">
-    <app-cockpit (serverCreated)="handleAddServer($event)" (blueprintCreated)="handleAddBlueprint($event)"></app-cockpit>
+    <app-cockpit (serverCreated)="handleAddServer($event)" (blueprintCreated)="handleAddBlueprint($event)">
+        <!-- Passing the content between custom tags -->
+        <p>Pass content to child example</p>
+    </app-cockpit>
     <hr>
     <div class="row">
         <div class="col-xs-12">
