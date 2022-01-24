@@ -10,7 +10,12 @@ import { AccountService } from '../account.service';
 })
 export class NewAccountComponent {
   // Inject the logging service into the component
-  constructor(private accountsService: AccountService) {}
+  constructor(private accountsService: AccountService) {
+    // subscribe/listen to the event
+    this.accountsService.statusUpdated.subscribe((status: string) => {
+      alert(`Status is ${status}`);
+    });
+  }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
