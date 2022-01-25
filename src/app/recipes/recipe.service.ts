@@ -1,21 +1,22 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { EventEmitter, Injectable } from '@angular/core';
 
-import { Recipe } from "./recipe.model";
+import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable()
 export class RecipeService {
     recipeSelected = new EventEmitter<Recipe>();
 
     private recipes: Recipe[] = [
+        new Recipe('Zinger Burger', 'The mighty zinger burger recipe', 'https://recipefairy.com/wp-content/uploads/2020/08/kfc-zinger-burger.jpg', [
+            new Ingredient('Bun', 2),
+            new Ingredient('Chicken', 2),
+        ]),
         new Recipe(
-            'Test Recipe',
-            'Test Description for recipe 1',
-            'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505'
-        ),
-        new Recipe(
-            'Another Test Recipe',
-            'Test Description for recipe 1',
-            'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505'
+            'Pizza',
+            'Recipe for deliciously spicy pizza',
+            'https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800',
+            [new Ingredient('Pizza Bread', 1), new Ingredient('Cheese', 2)]
         ),
     ];
 
