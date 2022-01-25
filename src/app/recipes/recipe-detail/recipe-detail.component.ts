@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
     selector: 'app-recipe-detail',
@@ -10,7 +11,13 @@ import { Recipe } from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
     @Input() recipe!: Recipe;
 
-    constructor() {}
+    constructor(private recipeService: RecipeService) {}
 
     ngOnInit(): void {}
+
+    // Event to be triggered on dropdown add to shopping list selection
+    // It will call the recipe service to add the ingredient to shopping list
+    onAddToShoppingList() {
+        this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+    }
 }

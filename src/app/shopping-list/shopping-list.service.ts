@@ -17,4 +17,10 @@ export class ShoppingListService {
         // Emit the event to notify the change in array to all the listeners, so that they can update their state
         this.ingredientsChanged.emit(this.getIngredients());
     }
+
+    // Function that will add the ingredients from recipe in shopping list and emit the event to inform the changes
+    addIngredients(ingredients: Ingredient[]) {
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.getIngredients());
+    }
 }
