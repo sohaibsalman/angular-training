@@ -1,2 +1,5 @@
 <p>User with ID {{ user.id }} loaded.</p>
 <p>User name is {{ user.name }}</p>
+<hr>
+<!-- Add a router link that will re-navigate to the same component with new data -->
+<a [routerLink]="['/users', '10', 'Saad']">Load Saad</a>
