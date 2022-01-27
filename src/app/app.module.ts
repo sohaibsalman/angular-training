@@ -18,6 +18,8 @@ import { ServersService } from './servers/servers.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent },
+  // we can add dynamic parameter to routing by using :any_name after the route. e.g. users/:id
+  { path: 'users/:id/:name', component: UserComponent },
   { path: 'servers', component: ServersComponent },
 ];
 
