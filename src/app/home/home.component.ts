@@ -16,4 +16,12 @@ export class HomeComponent implements OnInit {
     // Use navigate function to navigate to the component programmatically
     this.router.navigate(['/servers']);
   }
+
+  handleLoadServer(id: number) {
+    // navigate to a component with query params and fragment programatically
+    this.router.navigate(['/servers', id, 'edit'], {
+      queryParams: { allowEdit: '1' },
+      fragment: 'loading',
+    });
+  }
 }

@@ -1,9 +1,17 @@
+<!-- 
+  [queryParams] directive can be used to pass the query parameters to the route
+  [fragment] directive can be used to pass the fragment information to the route
+ -->
+
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <a
         href="#"
         class="list-group-item"
+        [routerLink]="['/servers', server.id, 'edit']"
+        [queryParams]="{allowEdit: '1'}"
+        [fragment]="'loading'"
         *ngFor="let server of servers">
         {{ server.name }}
       </a>

@@ -21,6 +21,7 @@ const appRoutes: Routes = [
   // we can add dynamic parameter to routing by using :any_name after the route. e.g. users/:id
   { path: 'users/:id/:name', component: UserComponent },
   { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id/edit', component: ServerComponent },
 ];
 
 @NgModule({
