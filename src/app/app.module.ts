@@ -11,6 +11,7 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 // An array of objects containing the routes of application
 const appRoutes: Routes = [
@@ -28,6 +29,14 @@ const appRoutes: Routes = [
       { path: ':id/edit', component: EditServerComponent },
     ],
   },
+  {
+    path: 'not-found',
+    component: PageNotFoundComponent,
+  },
+  {
+    path: '**', // wildcard that will catch all routes not defined
+    redirectTo: 'not-found', // redirect it to notfound page
+  },
 ];
 
 @NgModule({
@@ -39,6 +48,7 @@ const appRoutes: Routes = [
     UserComponent,
     EditServerComponent,
     ServerComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [ServersService],
